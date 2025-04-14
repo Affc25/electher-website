@@ -30,13 +30,13 @@ const AnalyticsSection = () => {
       <div className="max-w-3xl flex flex-col items-center mb-12">
         <h3 className="uppercase font-inter font-bold text-affc-pink text-sm mb-4">Numbers in Perspective</h3>
         <h4 className="text-3xl md:text-4xl font-semibold mb-6">The African Female Founder Landscape</h4>
-        <p className="text-lg font-inter text-center">Compelling statistics that underscore the urgency and value of AFFC's work across the continent.</p>
+        <p className="text-lg font-inter text-center">Compelling statistics that underscore the urgency and value of AFFC&apos;s work across the continent.</p>
       </div>
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-8">
           {
             analyticsData.map(item=>{
               return (
-                <AnalyticsCard {...item}/>
+                <AnalyticsCard key={item.title} {...item}/>
               )
             })
           }
