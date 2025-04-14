@@ -27,7 +27,7 @@ const Button:FC<PropsType> = ({
     "outline": "text-[#9BBFE0]"
   }[variant]
 
-const className = twMerge(`${disabled ? "cursor-not-allowed opacity-40" :""} font-inter border border-[#9BBFE0] ${bg} ${textColor} font-semi-bold text-sm items-center flex justify-center disabled:hover:scale-100 disabled:active:scale-100  hover:scale-105 active:scale-90 h-[2.4rem] rounded-md min-w-[100px] flex items-center space-x-3  transition-all duration-150`, addClasses)
+const className = twMerge(`${disabled ? "cursor-not-allowed opacity-40" :""} font-inter border border-[#9BBFE0] ${bg} ${textColor} font-semi-bold text-sm items-center flex justify-center disabled:hover:scale-100 disabled:active:scale-100  hover:scale-105 active:scale-90 cursor-pointer h-[2.4rem] rounded-md min-w-[100px] flex items-center space-x-3  transition-all duration-150`, addClasses)
 
   return href ?  (
   
