@@ -25,7 +25,7 @@ export default function Home() {
           </h1>
           <div className="h-[2px] w-28 bg-[rgb(214_135_177)] my-8"/>
           <p className="text-2xl w-[800px] text-center font-medium text-[#1b1c23cc]">
-            Powering the visibility, investability, and scalability of Africa's female-led ventures.
+            Powering the visibility, investability, and scalability of Africa&apos;s female-led ventures.
           </p>
           <div className="mt-8 flex space-x-4">
             <Button className="px-5 text-lg h-13 font-inter font-semibold">Find Out More</Button>
