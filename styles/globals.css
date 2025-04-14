@@ -3,8 +3,9 @@
 
 @theme {
   --color-brand: #9BBFE0;
+  --color-affc-pink: #D687b1;
+  --color-affc-gray: #2c3539;
   --font-inter: var(--font-inter);
   --color-affc-blue: rgb(155, 191, 224);
-  --color-affc-pink: #D687b1;
   --font-playfair-display: var(--font-playfair-display);
 }

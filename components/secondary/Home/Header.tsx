@@ -3,7 +3,7 @@ import React from 'react'
 
 const Header = () => {
   return (
-    <section 
+    <header 
       id="hero"
       className="w-screen h-screen bg-white bg-blend-lighten flex flex-col items-center justify-center z-10"
       style={{
@@ -32,7 +32,7 @@ const Header = () => {
         </div>
       </div>
 
-    </section> 
+    </header> 
   )
 }
 
