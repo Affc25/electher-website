@@ -33,7 +33,7 @@ const MissionSection = () => {
     <section className="px-28 bg-white flex flex-col items-center py-20">
       <div className="max-w-3xl flex flex-col items-center mb-12">
         <h3 className="uppercase font-inter font-bold text-affc-pink text-sm mb-4">Our Mission</h3>
-        <h4 className="text-3xl md:text-4xl font-semibold mb-6">Empowering Africa's Female Entrepreneurs</h4>
+        <h4 className="text-3xl md:text-4xl font-semibold mb-6">Empowering Africa&apos;s Female Entrepreneurs</h4>
         <p className="text-lg font-inter text-center mb-8 text-[#1b1c23cc]">AFFC is dedicated to closing the gender funding gap in Africa by providing female founders with the resources, networks, and opportunities they need to build scalable and investable ventures.</p>
         <Button variant="outline" className="px-5 text-lg h-13 font-inter font-semibold">Learn More About Us</Button>
 
