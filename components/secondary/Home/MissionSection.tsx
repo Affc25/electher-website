@@ -43,6 +43,7 @@ const MissionSection = () => {
             missionData.map(item=>{
               return (
                 <MissionCard key={item.title} {...item}/>
+                
               )
             })
           }
