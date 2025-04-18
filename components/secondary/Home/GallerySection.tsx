@@ -1,11 +1,11 @@
 import "swiper/css";
-import "swiper/css/navigation";
 import "swiper/css/autoplay"; // Important to import if needed
-import { Navigation, Autoplay } from "swiper/modules";
+import "swiper/css/navigation";
+import Image from "next/image";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { Navigation, Autoplay } from "swiper/modules";
 import PrevIcon from "@/public/svg/arrow_left_icon.svg";
 import NextIcon from "@/public/svg/arrow_right_icon.svg";
-import Image from "next/image";
 
 const GallerySection = () => {
   return (
