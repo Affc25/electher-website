@@ -1,4 +1,5 @@
 export { default as Header } from "./Header"
+export { default as CafeSection } from "./CafeSection"
 export { default as ReportsSection } from "./ReportsSection"
 export { default as MissionSection } from "./MissionSection"
 export { default as GallerySection } from "./GallerySection"

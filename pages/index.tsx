@@ -1,4 +1,4 @@
-import { AnalyticsSection, GallerySection, Header, MissionSection, ReportsSection, ResourcesSection } from "@/components/secondary/Home";
+import { AnalyticsSection, CafeSection, GallerySection, Header, MissionSection, ReportsSection, ResourcesSection } from "@/components/secondary/Home";
 
 export default function Home() {
   return (
@@ -9,6 +9,7 @@ export default function Home() {
       <GallerySection/>
       <ResourcesSection/>
       <ReportsSection/>
+      <CafeSection/>
     </div>
   );
 }

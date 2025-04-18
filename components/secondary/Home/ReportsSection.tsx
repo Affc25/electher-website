@@ -1,3 +1,4 @@
+import { Button } from "@/components/ui";
 import React, { FC } from "react"
 
 
@@ -55,7 +56,7 @@ const ReportsSection = () => {
           ))  
         }
       </div>
-
+      <Button className="bg-affc-pink border-affc-pink px-5 text-lg h-13 font-inter font-semibold mt-10">Explore All Publications</Button>
     </section>
   )
 }
