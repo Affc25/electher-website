@@ -1,7 +1,4 @@
-import React, { FC, ReactNode } from "react"
-import DataIcon from "@/public/svg/data_center_icon.svg";
-import BookmarkIcon from "@/public/svg/bookmark_icon.svg"
-import ResourceIcon from "@/public/svg/resource_library_icon.svg"
+import React, { FC } from "react"
 
 
 const publicationsData = [
