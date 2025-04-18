@@ -1,4 +1,4 @@
-import React, { ReactNode } from 'react'
+import React, { ReactNode } from "react"
 import DataIcon from "@/public/svg/data_center_icon.svg";
 import BookmarkIcon from "@/public/svg/bookmark_icon.svg"
 import ResourceIcon from "@/public/svg/resource_library_icon.svg"
@@ -79,7 +79,6 @@ const ResourcesSection = () => {
     </section>
   )
 }
-
 
 type FundingCardProps = {
   title: string;
