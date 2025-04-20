@@ -1,8 +1,13 @@
-import { Button, Logo } from "@/components/ui"
 import Link from "next/link"
-import React, { FC, ReactNode, useEffect, useState } from "react"
-import { Playfair_Display, Inter  } from "next/font/google"
 import Image from "next/image"
+import { Button, Logo } from "@/components/ui"
+import MailIcon from "@/public/svg/mail_icon.svg"
+import WorldIcon from "@/public/svg/world_icon.svg"
+import TwitterIcon from "@/public/svg/twitter_icon.svg"
+import LinkedInIcon from "@/public/svg/linkedin_icon.svg"
+import { Playfair_Display, Inter  } from "next/font/google"
+import InstagramIcon from "@/public/svg/instagram_icon.svg"
+import React, { FC, ReactNode, useEffect, useState } from "react"
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -35,7 +40,7 @@ const AppLayout:FC<PropsType>  = ({
   }, []);
 
   return (
-    <main className={`h-[200vh] ${playfair_display.variable} ${inter.variable} font-playfair-display`}>
+    <main className={`${playfair_display.variable} ${inter.variable} font-playfair-display`}>
       <header className={`fixed z-[99999999] top-0  flex justify-between items-center px-28 h-20 w-full border-b-gray-200 ${isScrolled ? "bg-white border-b shadow-xs" : "bg-transparent"} transition-colors duration-500`}>
         <Logo className="size-14"/>
         <nav>
@@ -76,6 +81,7 @@ const AppLayout:FC<PropsType>  = ({
       <div>
         {children}
       </div>
+      <Footer/>
     </main>
   )
 }
@@ -145,5 +151,110 @@ const LinkItem:FC<LinkItemPropsType> = ({
   )
     
 }
+
+const Footer = () => {
+  return (
+    <footer className="bg-affc-cream py-16 px-6">
+      <div className="container mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-12">
+          
+          {/* Logo and Description */}
+          <div className="md:col-span-2">
+            <div className="mb-4">
+              <Logo className="size-16"/>
+            </div>
+            <p className="text-foreground/80 mb-6 max-w-md">
+              Africa Female Founders Collective is dedicated to supporting and scaling
+              female-owned and led ventures across African markets.
+            </p>
+
+            {/* Social Icons */}
+            <div className="flex space-x-4">
+              {[
+                { href: '#', label: 'Email', icon: MailIcon },
+                { href: '#', label: 'Instagram', icon: InstagramIcon },
+                { href: '#', label: 'Twitter', icon: TwitterIcon },
+                { href: '#', label: 'LinkedIn', icon: LinkedInIcon },
+              ].map(({ href, label, icon: Icon }, index) => (
+                <a
+                  key={index}
+                  href={href}
+                  aria-label={label}
+                  className="size-10 rounded-full bg-affc-blue/10 flex items-center justify-center text-affc-blue hover:bg-affc-blue hover:text-white transition-colors"
+                >
+                  <Icon className="size-5"/>
+                </a>
+              ))}
+            </div>
+          </div>
+
+          {/* Quick Links */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Quick Links</h3>
+            <ul className="space-y-3 font-inter">
+              <li>
+                <a href="#about" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+                  About Us
+                </a>
+              </li>
+              <li>
+                <a href="#programs" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+                  Our Network
+                </a>
+              </li>
+              <li>
+                <a href="#community" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+                  Events
+                </a>
+              </li>
+              <li>
+                <a href="#contact" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+                  Resources
+                </a>
+              </li>
+            
+            </ul>
+          </div>
+
+          {/* Another Column if needed (optional) */}
+          <div>
+            <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
+            <ul className="space-y-3 font-inter">
+              <li>
+                <a href="mailto:info@affc.org" className="text-foreground/80 hover:text-affc-blue flex space-x-2 transition-colors link-underline">
+                  <MailIcon className="text-affc-blue size-6"/>
+                  <span>info@affc.org</span>
+                </a>
+              </li>
+              <li>
+              <a href="#blog" className="text-foreground/80 hover:text-affc-blue flex space-x-2 transition-colors link-underline">
+                  <WorldIcon className="text-affc-blue size-4 mt-1"/>
+                  <span>Pan-African with hubs in Nairobi, Lagos, and Cape Town</span>
+                </a>
+              </li>
+            </ul>
+          </div>
+
+        </div>
+      </div>
+      <div className="h-[1px] bg-affc-blue/20 mt-16 container mx-auto  "/>
+      <div className="flex justify-between w-full container mx-auto mt-8 font-inter text-sm text-[#1b1d2399]">
+        <p>&copy; 2025 Africa Female Founders Collective. All rights reserved.</p>
+        <ul className="flex space-x-4">
+          <li>
+            <a href="#privacy_policy" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+              Privacy Policy
+            </a>
+          </li>
+          <li>
+            <a href="#tos" className="text-foreground/80 hover:text-affc-blue transition-colors link-underline">
+              Terms of Service
+            </a>
+          </li>
+        </ul>
+      </div>
+    </footer>
+  );
+};
 
 export default AppLayout
