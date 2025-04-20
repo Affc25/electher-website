@@ -39,7 +39,7 @@ const CafeSection = () => {
           The African Female Founders Podcast
         </h4>
         <p className="text-lg font-inter text-[#1b1c23cc]">
-          A curated storytelling space spotlighting African female founders. Each episode dives deep into the entrepreneurial journeys, challenges, milestones, and ecosystem dynamics shaping women"s venture building across the continent.
+          A curated storytelling space spotlighting African female founders. Each episode dives deep into the entrepreneurial journeys, challenges, milestones, and ecosystem dynamics shaping women&apos;s venture building across the continent.
         </p>
       </div>
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
