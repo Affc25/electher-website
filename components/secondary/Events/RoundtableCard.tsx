@@ -1,0 +1,80 @@
+import ClockIcon from "@/public/svg/clock_icon.svg"
+import LocationIcon from "@/public/svg/location_icon.svg"
+import CalendarIcon from "@/public/svg/calendar_icon.svg"
+
+interface RoundtableCardProps {
+  label: string;
+  date: string;
+  type: string;
+  title: string;
+  time: string;
+  imageUrl: string;
+  location: string;
+  description: string;
+  buttonText?: string;
+  onButtonClick?: () => void;
+}
+
+const RoundtableCard: React.FC<RoundtableCardProps> = ({
+  imageUrl,
+  label,
+  date,
+  type,
+  title,
+  description,
+  time,
+  location,
+  buttonText = "Register to Attend",
+  onButtonClick,
+}) => {
+  return (
+    <div className="grid md:grid-cols-3 h-full rounded-lg shadow-lg bg-white">
+      <div className="relative h-full min-h-[200px] md:min-h-full">
+        <div
+          style={{ backgroundImage: `url(${imageUrl})` }}
+          className="absolute inset-0 bg-center bg-cover rounded-l-lg"
+        />
+        <div className="absolute inset-0 bg-gradient-to-r rounded-l-lg from-affc-gray/70 to-transparent flex items-center justify-center md:justify-start p-6">
+          <div className="text-white text-center md:text-left font-inter">
+            <div className="bg-affc-pink/90 text-white px-3 py-1 rounded inline-block mb-2">
+              {label}
+            </div>
+            <div className="text-lg font-medium">{date}</div>
+            <div className="text-sm opacity-90">{type}</div>
+          </div>
+        </div>
+      </div>
+
+      <div className="md:col-span-2 p-6 border-l border-l-white">
+        <h3 className="text-xl font-semibold mb-3">{title}</h3>
+        <p 
+          className="text-foreground/80 mb-4 font-inter text-sm text-ellipsis whitespace-pre-line line-clamp-5"
+        >{description}</p>
+        
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+          <div className="flex items-center gap-2">
+            <ClockIcon />
+            <span className="text-sm">{time}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <CalendarIcon />
+            <span className="text-sm">{date}</span>
+          </div>
+          <div className="flex items-center gap-2">
+            <LocationIcon className="text-affc-blue"/>
+            <span className="text-sm">{location}</span>
+          </div>
+        </div>
+
+        <button
+          onClick={onButtonClick}
+          className="inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 bg-affc-blue text-white hover:bg-affc-blue/90 active:scale-[0.98] px-4 py-2 text-base"
+        >
+          {buttonText}
+        </button>
+      </div>
+    </div>
+  );
+};
+
+export default RoundtableCard

@@ -3,9 +3,10 @@
 
 @theme {
   --color-brand: #9BBFE0;
+  --color-affc-gray: #2c3539;
   --color-affc-pink: #D687b1;
   --color-affc-cream: #F2E8CB;
-  --color-affc-gray: #2c3539;
+  --color-affc-offwhite: #F5F5F5;
   --font-inter: var(--font-inter);
   --color-affc-blue: rgb(155, 191, 224);
   --font-playfair-display: var(--font-playfair-display);
