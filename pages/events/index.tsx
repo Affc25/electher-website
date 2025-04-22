@@ -1,4 +1,4 @@
-import { RoundtableCard, RoundTableTablist } from "@/components/secondary/Events";
+import { RoundtableCard, RoundTableTablist, SuggestRoundTable } from "@/components/secondary/Events";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react"
 
@@ -148,7 +148,7 @@ const Events = () => {
           </div>
           <div className="flex justify-center">
             <img 
-              src="/placeholder.svg" 
+              src="/images/header_img.png" 
               alt="AFFC Roundtable Discussion" 
               className="rounded-lg shadow-lg max-h-80 object-cover" 
             />
@@ -158,28 +158,29 @@ const Events = () => {
       <section className="bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-6 text-center">Roundtable Events</h2>
         <RoundTableTablist
-        tabs={tabs.map((tab) => ({
-          ...tab,
-          isActive: tab.unique_id === activeState,
-        }))}
-        onTabClick={updateTab}
-      />
-      <div>
-      <RoundtableCard
-            title="Re-Engineering Pathways to Capital: Late-Stage Funding for the Scalability of African Female-led Ventures"
-            time="2 PM WAT"
-            date="May 8, 2025"
-            location="Virtual, Zoom"
-            onButtonClick={() => { } }
-            imageUrl=""
-            description={`While many African women dominate early-stage entrepreneurship and micro-enterprises, they are consistently excluded from capital-intensive stages where businesses scale, expand production, enter new markets, or formalize operations. This has created a “missing middle” for female founders; a structural void where ambition, innovation, and potential are not matched with the resources needed to grow. 
-            
-            This flagship roundtable aims to unpack what has failed, what is misunderstood, and what solutions can unlock scale—not as charity, but as smart economics.
-        `} 
-        label={"Upcoming"} 
-        type={"Hybrid"}    
+          tabs={tabs.map((tab) => ({
+            ...tab,
+            isActive: tab.unique_id === activeState,
+          }))}
+          onTabClick={updateTab}
         />
-      </div>
+        <RoundtableCard
+          title="Re-Engineering Pathways to Capital: Late-Stage Funding for the Scalability of African Female-led Ventures"
+          time="2 PM WAT"
+          date="May 8, 2025"
+          location="Virtual, Zoom"
+          imageUrl="images/header_img.png"
+          destinationUrl=":"
+          description={`While many African women dominate early-stage entrepreneurship and micro-enterprises, they are consistently excluded from capital-intensive stages where businesses scale, expand production, enter new markets, or formalize operations. This has created a “missing middle” for female founders; a structural void where ambition, innovation, and potential are not matched with the resources needed to grow. 
+          
+          This flagship roundtable aims to unpack what has failed, what is misunderstood, and what solutions can unlock scale—not as charity, but as smart economics.
+          `} 
+          label={"Upcoming"} 
+          type={"Hybrid"}    
+        />
+      </section>
+      <section className="mt-12 pb-16">
+        <SuggestRoundTable/>
       </section>
     </div>
   )

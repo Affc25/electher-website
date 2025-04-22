@@ -1,18 +1,19 @@
 import ClockIcon from "@/public/svg/clock_icon.svg"
 import LocationIcon from "@/public/svg/location_icon.svg"
 import CalendarIcon from "@/public/svg/calendar_icon.svg"
+import Link from "next/link";
 
 interface RoundtableCardProps {
-  label: string;
   date: string;
   type: string;
-  title: string;
   time: string;
+  title: string;
+  label: string;
   imageUrl: string;
   location: string;
   description: string;
   buttonText?: string;
-  onButtonClick?: () => void;
+  destinationUrl: string;
 }
 
 const RoundtableCard: React.FC<RoundtableCardProps> = ({
@@ -25,7 +26,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
   time,
   location,
   buttonText = "Register to Attend",
-  onButtonClick,
+  destinationUrl,
 }) => {
   return (
     <div className="grid md:grid-cols-3 h-full rounded-lg shadow-lg bg-white">
@@ -66,12 +67,12 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
           </div>
         </div>
 
-        <button
-          onClick={onButtonClick}
+        <Link
+          href={destinationUrl}
           className="inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 bg-affc-blue text-white hover:bg-affc-blue/90 active:scale-[0.98] px-4 py-2 text-base"
         >
           {buttonText}
-        </button>
+        </Link>
       </div>
     </div>
   );
