@@ -1,63 +1,11 @@
-import { RoundtableCard, RoundTableTablist, SuggestRoundTable } from "@/components/secondary/Events";
+import { RoundtableCard, RoundTableEvents, RoundTableTablist, SuggestRoundTable } from "@/components/secondary/Events";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react"
 import FileIcon from "@/public/svg/file_icon.svg";
 import PeopleIcon from "@/public/svg/people_icon.svg";
-const tabs = [
-  { label: "All Events", unique_id: "all", isActive: true },
-  { label: "Upcoming", unique_id: "upcoming", isActive: false },
-  { label: "Past Events", unique_id: "past", isActive: false },
-];
 
 const Events = () => {
-  const router = useRouter();
-  const { tab } = router.query;
 
-  const [activeState, setActiveState] = useState(tabs[0]?.unique_id);
-
-  useEffect(() => {
-    const checkTabs = (tabTitle?: string | string[]) => {
-      const currentTab = Array.isArray(tabTitle) ? tabTitle[0] : tabTitle;
-
-      const foundTab = tabs.find((item) => item.unique_id === currentTab);
-
-      if (foundTab) {
-        setActiveState(foundTab.unique_id);
-      } else {
-        // Default back to first tab
-        setActiveState(tabs[0]?.unique_id);
-        router.push(
-          {
-            query: {
-              ...router.query,
-              tab: tabs[0]?.unique_id,
-            },
-          },
-          undefined,
-          { shallow: true }
-        );
-      }
-    };
-
-    if (router.isReady) {
-      checkTabs(tab);
-    }
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [router.isReady, tab]);
-
-  const updateTab = (newTabId: string) => {
-    setActiveState(newTabId);
-    router.push(
-      {
-        query: {
-          ...router.query,
-          tab: newTabId,
-        },
-      },
-      undefined,
-      { shallow: true }
-    );
-  };
 
   return (
     <div className="bg-affc-offwhite md:px-28 px-6">
@@ -125,31 +73,29 @@ const Events = () => {
       </section>
       <section className="bg-white p-8 rounded-lg shadow-md">
         <h2 className="text-2xl font-semibold mb-6 text-center">Roundtable Events</h2>
-        <RoundTableTablist
-          tabs={tabs.map((tab) => ({
-            ...tab,
-            isActive: tab.unique_id === activeState,
-          }))}
-          onTabClick={updateTab}
+        <RoundTableEvents 
+          data={[
+          {
+            title:"Re-Engineering Pathways to Capital: Late-Stage Funding for the Scalability of African Female-led Ventures",
+            time:"2 PM WAT",
+            date:"May 8, 2025",
+            location:"Virtual, Zoom",
+            imageUrl:"images/header_img.png",
+            destinationUrl:":",
+            description:`While many African women dominate early-stage entrepreneurship and micro-enterprises, they are consistently excluded from capital-intensive stages where businesses scale, expand production, enter new markets, or formalize operations. This has created a “missing middle” for female founders; a structural void where ambition, innovation, and potential are not matched with the resources needed to grow. 
+            
+            This flagship roundtable aims to unpack what has failed, what is misunderstood, and what solutions can unlock scale—not as charity, but as smart economics.
+            `, 
+            label:"Upcoming",
+            type:"Virtual",
+          }
+        ]}
         />
-        <RoundtableCard
-          title="Re-Engineering Pathways to Capital: Late-Stage Funding for the Scalability of African Female-led Ventures"
-          time="2 PM WAT"
-          date="May 8, 2025"
-          location="Virtual, Zoom"
-          imageUrl="images/header_img.png"
-          destinationUrl=":"
-          description={`While many African women dominate early-stage entrepreneurship and micro-enterprises, they are consistently excluded from capital-intensive stages where businesses scale, expand production, enter new markets, or formalize operations. This has created a “missing middle” for female founders; a structural void where ambition, innovation, and potential are not matched with the resources needed to grow. 
-          
-          This flagship roundtable aims to unpack what has failed, what is misunderstood, and what solutions can unlock scale—not as charity, but as smart economics.
-          `} 
-          label={"Upcoming"} 
-          type={"Virtual"}    
-        />
+        
       </section>
-      <section className="mt-12 pb-16">
+      {/* <section className="mt-12 pb-16">
         <SuggestRoundTable/>
-      </section>
+      </section> */}
     </div>
   )
 }

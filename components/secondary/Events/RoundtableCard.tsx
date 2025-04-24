@@ -3,7 +3,7 @@ import LocationIcon from "@/public/svg/location_icon.svg"
 import CalendarIcon from "@/public/svg/calendar_icon.svg"
 import Link from "next/link";
 
-interface RoundtableCardProps {
+export interface RoundtableCardProps {
   date: string;
   type: string;
   time: string;
