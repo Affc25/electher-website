@@ -1,4 +1,5 @@
-import { AnalyticsSection, CafeSection, ComingSoon, GallerySection, Header, MissionSection, PavillonSection, ReportsSection, ResourcesSection } from "@/components/secondary/Home";
+// import { AnalyticsSection, CafeSection, ComingSoon, GallerySection, Header, MissionSection, PavillonSection, ReportsSection, ResourcesSection } from "@/components/secondary/Home";
+import { ComingSoon} from "@/components/secondary/Home";
 
 export default function Home() {
   return (
