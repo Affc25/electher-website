@@ -40,8 +40,8 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
             <div className="bg-affc-pink/90 text-white px-3 py-1 rounded inline-block mb-2">
               {label}
             </div>
-            <div className="text-lg font-medium">{date}</div>
-            <div className="text-sm opacity-90">{type}</div>
+            <div className="text-lg font-medium font-inter">{date}</div>
+            <div className="text-sm opacity-90 font-inter">{type}</div>
           </div>
         </div>
       </div>
@@ -52,7 +52,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
           className="text-foreground/80 mb-4 font-inter text-sm text-ellipsis whitespace-pre-line line-clamp-5"
         >{description}</p>
         
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6">
+        <div className="grid grid-cols-2 md:grid-cols-3 gap-4 mb-6 font-inter">
           <div className="flex items-center gap-2">
             <ClockIcon />
             <span className="text-sm">{time}</span>
@@ -69,7 +69,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
 
         <Link
           href={destinationUrl}
-          className="inline-flex items-center justify-center rounded-md font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 bg-affc-blue text-white hover:bg-affc-blue/90 active:scale-[0.98] px-4 py-2 text-base"
+          className="inline-flex font-inter items-center justify-center rounded-md font-medium transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring disabled:opacity-50 bg-affc-blue text-white hover:bg-affc-blue/90 active:scale-[0.98] px-4 py-2 text-base"
         >
           {buttonText}
         </Link>

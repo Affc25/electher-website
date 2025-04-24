@@ -1,7 +1,8 @@
 import { RoundtableCard, RoundTableTablist, SuggestRoundTable } from "@/components/secondary/Events";
 import { useRouter } from "next/router";
 import React, { useEffect, useState } from "react"
-
+import FileIcon from "@/public/svg/file_icon.svg";
+import PeopleIcon from "@/public/svg/people_icon.svg";
 const tabs = [
   { label: "All Events", unique_id: "all", isActive: true },
   { label: "Upcoming", unique_id: "upcoming", isActive: false },
@@ -80,11 +81,11 @@ const Events = () => {
             <h2 className="text-2xl font-semibold mb-4">
               What is the AFFC Roundtable?
             </h2>
-            <p className="mb-4 text-foreground/80">
+            <p className="mb-4 text-foreground/80 font-inter">
               The AFFC Roundtable is a forum for substantive discussions on policies and practices that affect female founders in Africa. 
               We bring together diverse stakeholders to identify challenges, share insights, and develop actionable recommendations.
             </p>
-            <p className="mb-6 text-foreground/80">
+            <p className="mb-6 text-foreground/80 font-inter">
               Each roundtable focuses on a specific theme relevant to supporting female entrepreneurship across the continent, 
               with the goal of driving meaningful change through evidence-based advocacy and collaboration.
             </p>
@@ -93,26 +94,10 @@ const Events = () => {
               {/* Diverse Voices Card */}
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="18" 
-                    height="18" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="lucide lucide-users text-affc-blue"
-                  >
-                    <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-                    <circle cx="9" cy="7" r="4" />
-                    <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-                    <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                  </svg>
+                  <PeopleIcon className="text-affc-blue size-5"/>
                   <h3 className="font-medium">Diverse Voices</h3>
                 </div>
-                <p className="text-sm text-foreground/70">
+                <p className="text-sm text-foreground/70 font-inter">
                   Bringing together multiple perspectives for comprehensive solutions
                 </p>
               </div>
@@ -120,27 +105,10 @@ const Events = () => {
               {/* Policy Briefs Card */}
               <div className="bg-white p-4 rounded-lg shadow-sm">
                 <div className="flex items-center gap-2 mb-2">
-                  <svg 
-                    xmlns="http://www.w3.org/2000/svg" 
-                    width="18" 
-                    height="18" 
-                    viewBox="0 0 24 24" 
-                    fill="none" 
-                    stroke="currentColor" 
-                    strokeWidth="2" 
-                    strokeLinecap="round" 
-                    strokeLinejoin="round" 
-                    className="lucide lucide-file-text text-affc-pink"
-                  >
-                    <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-                    <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-                    <path d="M10 9H8" />
-                    <path d="M16 13H8" />
-                    <path d="M16 17H8" />
-                  </svg>
+                  <FileIcon className="text-affc-pink size-5"/>
                   <h3 className="font-medium">Policy Briefs</h3>
                 </div>
-                <p className="text-sm text-foreground/70">
+                <p className="text-sm text-foreground/70 font-inter">
                   Translating insights into actionable policy recommendations
                 </p>
               </div>
@@ -176,7 +144,7 @@ const Events = () => {
           This flagship roundtable aims to unpack what has failed, what is misunderstood, and what solutions can unlock scale—not as charity, but as smart economics.
           `} 
           label={"Upcoming"} 
-          type={"Hybrid"}    
+          type={"Virtual"}    
         />
       </section>
       <section className="mt-12 pb-16">

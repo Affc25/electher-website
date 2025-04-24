@@ -1,12 +1,15 @@
 import Link from "next/link"
 import Image from "next/image"
 import { Button, Logo } from "@/components/ui"
+import MenuIcon from "@/public/svg/menu_icon.svg";
 import MailIcon from "@/public/svg/mail_icon.svg"
 import WorldIcon from "@/public/svg/world_icon.svg"
+import CancelIcon from "@/public/svg/cancel_icon.svg";
 import TwitterIcon from "@/public/svg/twitter_icon.svg"
 import LinkedInIcon from "@/public/svg/linkedin_icon.svg"
 import { Playfair_Display, Inter  } from "next/font/google"
 import InstagramIcon from "@/public/svg/instagram_icon.svg"
+
 import React, { FC, ReactNode, useEffect, useState } from "react"
 
 const playfair_display = Playfair_Display({
@@ -29,6 +32,11 @@ const AppLayout:FC<PropsType>  = ({
   children
 }) => {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleMobileMenuChange = () => {
+    setIsMobileMenuOpen(prev => !prev);
+  }
 
   useEffect(() => {
     const onScroll = () => {
@@ -41,10 +49,22 @@ const AppLayout:FC<PropsType>  = ({
 
   return (
     <main className={`${playfair_display.variable} ${inter.variable} font-playfair-display`}>
-      <header className={`fixed z-[99999999] top-0  flex justify-between items-center px-28 h-20 w-full border-b-gray-200 ${isScrolled ? "bg-white border-b shadow-xs" : "bg-transparent"} transition-colors duration-500`}>
-        <Logo className="size-14"/>
+      <header className={`fixed z-[99999999] top-0 flex flex-col lg:flex-row justify-between lg:items-center px-6 py-2 lg:py-0 lg:px-28 lg:h-20 w-full border-b-gray-200 ${isScrolled ? "bg-white border-b shadow-xs" : "bg-white lg:bg-transparent"} transition-colors duration-500`}>
+        <div className="flex items-center justify-between lg:justify-start w-full lg:w-auto">
+          <Logo className="size-14"/>
+          <button
+            className="size-6 lg:hidden cursor-pointer" 
+            onClick={handleMobileMenuChange} 
+          >
+          {
+            isMobileMenuOpen ? (<CancelIcon className="size-6" /> ) : (<MenuIcon className="size-6"/>)
+          }
+          </button>
+          
+        </div>
+
         <nav>
-          <ul className="flex space-x-4 items-center font-inter">
+          <ul className={`flex flex-col lg:flex-row mt-4 lg:mt-0 lg:space-x-4 space-y-6 lg:space-y-0 lg:items-center font-inter  ${isMobileMenuOpen ? "block" : "hidden lg:flex"}`}>
             <LinkItem href="publications" text="Publications"/>
             <LinkItem href="affc_café" text="AFFC Café"/>
             <LinkItem 
@@ -67,21 +87,20 @@ const AppLayout:FC<PropsType>  = ({
             <LinkItem 
               href="female_founder_monitor" 
               text={
-                <div>
-                  
+                <span>
                   Female Founder Monitor
-                </div>
+                </span>
               }
             />
             <LinkItem href="about" text="About"/>
-            <Button href="newsletter" className="font-semibold">Newsletter</Button>
+            <Button href="newsletter" className="font-semibold mb-8 lg:mb-0">Newsletter</Button>
           </ul>
         </nav>
       </header> 
       <div>
         {children}
       </div>
-      <Footer/>
+      {/* <Footer/> */}
     </main>
   )
 }
@@ -106,14 +125,14 @@ const LinkItem:FC<LinkItemPropsType> = ({
 }) => {
   if (!subLinks) return(
     <li>
-      <Link href={href} className="font-medium cursor-pointer py-2 px-4 text-sm">
+      <Link href={href} className="font-medium cursor-pointer lg:py-2 lg:px-4 lg:text-sm">
         {text}
       </Link>
     </li>
   )
   return (
     <li className="relative group">
-      <span className="font-medium flex cursor-pointer space-x-1 text-sm items-center rounded-sm hover:text-brand hover:bg-green-200 py-2 px-4">
+      <span className="font-medium flex cursor-pointer space-x-1 lg:text-sm items-center rounded-sm hover:text-brand hover:bg-green-200 lg:py-2 lg:px-4">
         <span>{text}</span>
         <div className="relative size-3 group-hover:rotate-180 transition-all delay-200">
           <Image
@@ -124,11 +143,11 @@ const LinkItem:FC<LinkItemPropsType> = ({
         </div>
       </span>
       <div 
-        className="absolute flex overflow-hidden max-h-0 opacity-0 scale-95 group-hover:opacity-100 group-hover:max-h-[500px] group-hover:scale-100 transition-[scale_height] duration-300 ease-in-out space-x-2 p-0 group-hover:p-4 rounded-md bg-white top-9 shadow-lg">
+        className="lg:absolute flex flex-col lg:flex-row overflow-hidden max-h-0 opacity-0 scale-95 group-hover:opacity-100 group-hover:max-h-[500px] group-hover:scale-100 transition-[scale_height] duration-300 ease-in-out space-x-2 p-0 group-hover:p-4 rounded-md lg:bg-white top-9 lg:shadow-lg w-full lg:w-fit">
         {
           subLinks.map(item=>{
             return(
-              <Link href={item.href} className="flex p-2 items-start w-64 space-x-2 rounded-md hover:bg-gray-100">
+              <Link href={item.href} className="flex p-2 items-start w-full lg:w-64 space-x-2 rounded-md lg:hover:bg-gray-100">
                 <div className="relative size-5">
                   <Image
                     fill

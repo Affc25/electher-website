@@ -6,7 +6,7 @@ const SuggestRoundtable = () => {
       <h2 className="text-2xl font-semibold mb-4">
         Suggest a Roundtable Topic
       </h2>
-      <p className="mb-6 max-w-2xl mx-auto">
+      <p className="mb-6 max-w-2xl mx-auto font-inter">
         Have an idea for an important policy issue affecting female founders in Africa? 
         We welcome suggestions for future roundtable discussions.
       </p>
