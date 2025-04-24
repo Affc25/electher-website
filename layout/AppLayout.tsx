@@ -65,10 +65,10 @@ const AppLayout:FC<PropsType>  = ({
 
         <nav>
           <ul className={`flex flex-col lg:flex-row mt-4 lg:mt-0 lg:space-x-4 space-y-6 lg:space-y-0 lg:items-center font-inter  ${isMobileMenuOpen ? "block" : "hidden lg:flex"}`}>
-            <LinkItem href="publications" text="Publications"/>
-            <LinkItem href="affc_café" text="AFFC Café"/>
+            <LinkItem href="#publications" text="Publications"/>
+            <LinkItem href="#affc_café" text="AFFC Café"/>
             <LinkItem 
-              href="resources" 
+              href="#resources" 
               text="Resources"
               subLinks={[
                 {
@@ -85,15 +85,15 @@ const AppLayout:FC<PropsType>  = ({
               ]}
             />
             <LinkItem 
-              href="female_founder_monitor" 
+              href="#female_founder_monitor" 
               text={
                 <span>
                   Female Founder Monitor
                 </span>
               }
             />
-            <LinkItem href="about" text="About"/>
-            <Button href="newsletter" className="font-semibold mb-8 lg:mb-0">Newsletter</Button>
+            <LinkItem href="#about" text="About"/>
+            <Button href="#newsletter" className="font-semibold mb-8 lg:mb-0">Newsletter</Button>
           </ul>
         </nav>
       </header> 
