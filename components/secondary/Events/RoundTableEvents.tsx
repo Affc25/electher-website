@@ -18,7 +18,7 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
   const { tab } = router.query;
 
   const [activeState, setActiveState] = useState(tabs[0]?.unique_id);
-
+  const [filteredData, setFilteredData] = useState<RoundtableCardProps[]>(data);
   useEffect(() => {
     const checkTabs = (tabTitle?: string | string[]) => {
       const currentTab = Array.isArray(tabTitle) ? tabTitle[0] : tabTitle;
@@ -26,7 +26,9 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
       const foundTab = tabs.find((item) => item.unique_id === currentTab);
 
       if (foundTab) {
-        setActiveState(foundTab.unique_id);
+
+        setActiveState(()=>foundTab.unique_id);
+        filterData(foundTab.unique_id as "upcoming" | "past");
       } else {
         // Default back to first tab
         setActiveState(tabs[0]?.unique_id);
@@ -62,8 +64,22 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
       { shallow: true }
     );
   };
+  const filterData = (status: "upcoming" | "past" | "all") => {
+    const currentDate = new Date();
+    const filtered = data.filter((item) => {
+      const itemDate = new Date(item.startDate);
+      if(status === "upcoming") {
+        return itemDate > currentDate;
+      }
+      if(status === "past") {
+        return itemDate < currentDate;  
+      }
+      return true;
+    });
+    setFilteredData(()=>filtered);
+  }
   return (
-    <section>
+    <section className="mb-8">
       <TabsList
          tabs={tabs.map((tab) => ({
           ...tab,
@@ -73,9 +89,8 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
         
       />
       {
-        data.map((item, index)=> (<RoundtableCard key={index} {...item}/>))
+        filteredData.map((item, index)=> (<RoundtableCard key={index} {...item}/>))
       }
-     
     </section>
   )
 }

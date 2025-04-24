@@ -78,7 +78,7 @@ const Events = () => {
           {
             title:"Re-Engineering Pathways to Capital: Late-Stage Funding for the Scalability of African Female-led Ventures",
             time:"2 PM WAT",
-            date:"May 8, 2025",
+            startDate:"May 8, 2025",
             location:"Virtual, Zoom",
             imageUrl:"images/header_img.png",
             destinationUrl:":",

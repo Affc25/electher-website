@@ -2,9 +2,11 @@ import ClockIcon from "@/public/svg/clock_icon.svg"
 import LocationIcon from "@/public/svg/location_icon.svg"
 import CalendarIcon from "@/public/svg/calendar_icon.svg"
 import Link from "next/link";
+import { useMemo } from "react";
 
 export interface RoundtableCardProps {
-  date: string;
+  startDate: string;
+  endDate?: string;
   type: string;
   time: string;
   title: string;
@@ -19,7 +21,7 @@ export interface RoundtableCardProps {
 const RoundtableCard: React.FC<RoundtableCardProps> = ({
   imageUrl,
   label,
-  date,
+  startDate,
   type,
   title,
   description,
@@ -28,6 +30,10 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
   buttonText = "Register to Attend",
   destinationUrl,
 }) => {
+
+  const formattedStartDate = useMemo(()=>{
+    return formatDate(startDate);
+  },[]) 
   return (
     <div className="grid md:grid-cols-3 h-full rounded-lg shadow-lg bg-white">
       <div className="relative h-full min-h-[200px] md:min-h-full">
@@ -40,7 +46,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
             <div className="bg-affc-pink/90 text-white px-3 py-1 rounded inline-block mb-2">
               {label}
             </div>
-            <div className="text-lg font-medium font-inter">{date}</div>
+            <div className="text-lg font-medium font-inter">{formattedStartDate}</div>
             <div className="text-sm opacity-90 font-inter">{type}</div>
           </div>
         </div>
@@ -59,7 +65,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
           </div>
           <div className="flex items-center gap-2">
             <CalendarIcon />
-            <span className="text-sm">{date}</span>
+            <span className="text-sm">{formattedStartDate}</span>
           </div>
           <div className="flex items-center gap-2">
             <LocationIcon className="text-affc-blue"/>
@@ -77,5 +83,13 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
     </div>
   );
 };
+
+const formatDate = (dateString: string) => {
+  const date = new Date();
+
+  const options = { year: 'numeric', month: 'long', day: 'numeric' };
+  // @ts-expect-error is correct
+  return date.toLocaleDateString('en-US', options);
+}
 
 export default RoundtableCard
