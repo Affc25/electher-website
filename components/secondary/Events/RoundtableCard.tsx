@@ -1,8 +1,8 @@
-import ClockIcon from "@/public/svg/clock_icon.svg"
-import LocationIcon from "@/public/svg/location_icon.svg"
-import CalendarIcon from "@/public/svg/calendar_icon.svg"
 import Link from "next/link";
 import { useMemo } from "react";
+import ClockIcon from "@/public/svg/clock_icon.svg";
+import LocationIcon from "@/public/svg/location_icon.svg";
+import CalendarIcon from "@/public/svg/calendar_icon.svg";
 
 export interface RoundtableCardProps {
   startDate: string;
