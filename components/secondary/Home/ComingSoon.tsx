@@ -13,7 +13,7 @@ const ComingSoon = () => {
       <div className="absolute inset-0 bg-white/90 z-0  " />
       <div className="z-20 flex flex-col items-center">
         <Logo className="lg:size-52"/>
-        <h1 className="text-6xl font-bold text-center">
+        <h1 className="text-4xl lg:text-6xl font-bold text-center">
           <span className="text-[#2c3539]">
             Africa Female
           </span>
@@ -23,7 +23,7 @@ const ComingSoon = () => {
           </span>
         </h1>
         <div className="h-[2px] w-28 bg-[rgb(214_135_177)] my-8"/>
-        <p className="text-2xl w-[800px] text-center font-medium text-[#1b1c23cc]">
+        <p className="text-2xl w-[90vw] lg:w-[800px] text-center font-medium text-[#1b1c23cc]">
           Powering the visibility, investability, and scalability of Africa&apos;s female-led ventures.
         </p>
         <div className="mt-8 flex space-x-4">

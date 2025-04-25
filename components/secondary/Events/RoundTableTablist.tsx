@@ -1,4 +1,5 @@
 import { FC } from "react";
+import { RoundtableCardProps } from "./RoundtableCard";
 
 interface Tab {
   label: string;
@@ -13,6 +14,7 @@ interface TabsListProps {
 
 export const TabsList: FC<TabsListProps> = ({ tabs, onTabClick }) => {
   return (
+
     <div
       role="tablist"
       aria-orientation="horizontal"
@@ -42,6 +44,7 @@ export const TabsList: FC<TabsListProps> = ({ tabs, onTabClick }) => {
           {tab.label}
         </button>
       ))}
+
     </div>
   );
 };
