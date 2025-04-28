@@ -33,7 +33,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
 
   const formattedStartDate = useMemo(()=>{
     return formatDate(startDate);
-  },[]) 
+  },[startDate]) 
   return (
     <div className="grid md:grid-cols-3 h-full rounded-lg shadow-lg bg-white">
       <div className="relative h-full min-h-[200px] md:min-h-full">
@@ -85,7 +85,7 @@ const RoundtableCard: React.FC<RoundtableCardProps> = ({
 };
 
 const formatDate = (dateString: string) => {
-  const date = new Date();
+  const date = new Date(dateString);
 
   const options = { year: 'numeric', month: 'long', day: 'numeric' };
   // @ts-expect-error is correct

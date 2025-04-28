@@ -1,5 +1,4 @@
 import { FC } from "react";
-import { RoundtableCardProps } from "./RoundtableCard";
 
 interface Tab {
   label: string;
