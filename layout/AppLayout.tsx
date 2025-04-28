@@ -1,6 +1,6 @@
-import Link from "next/link";
-import Image from "next/image";
-import { Button, Logo } from "@/components/ui";
+import Link from "next/link"
+import Image from "next/image"
+import { Button, Logo } from "@/components/ui"
 import MenuIcon from "@/public/svg/menu_icon.svg";
 import MailIcon from "@/public/svg/mail_icon.svg"
 import WorldIcon from "@/public/svg/world_icon.svg"
@@ -11,7 +11,6 @@ import { Playfair_Display, Inter  } from "next/font/google"
 import InstagramIcon from "@/public/svg/instagram_icon.svg"
 
 import React, { FC, ReactNode, useEffect, useState } from "react"
-import { useRouter } from "next/router";
 
 const playfair_display = Playfair_Display({
   subsets: ["latin"],
@@ -32,7 +31,6 @@ type PropsType = {
 const AppLayout:FC<PropsType>  = ({
   children
 }) => {
-  const router = useRouter()
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
@@ -102,7 +100,7 @@ const AppLayout:FC<PropsType>  = ({
       <div>
         {children}
       </div>
-      {router.pathname !== "/" && <Footer/>}
+      {/* <Footer/> */}
     </main>
   )
 }
@@ -242,9 +240,9 @@ const Footer = () => {
             <h3 className="font-semibold text-lg mb-4">Contact Us</h3>
             <ul className="space-y-3 font-inter">
               <li>
-                <a href="mailto:affc@elect-her.org" className="text-foreground/80 hover:text-affc-blue flex space-x-2 transition-colors link-underline">
+                <a href="mailto:info@affc.org" className="text-foreground/80 hover:text-affc-blue flex space-x-2 transition-colors link-underline">
                   <MailIcon className="text-affc-blue size-6"/>
-                  <span>affc@elect-her.org</span>
+                  <span>info@affc.org</span>
                 </a>
               </li>
               <li>
