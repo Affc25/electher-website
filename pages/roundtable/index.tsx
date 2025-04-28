@@ -1,6 +1,5 @@
-import { RoundtableCard, RoundTableEvents, RoundTableTablist, SuggestRoundTable } from "@/components/secondary/Events";
-import { useRouter } from "next/router";
-import React, { useEffect, useState } from "react"
+import { RoundTableEvents } from "@/components/secondary/Events";
+import React from "react"
 import FileIcon from "@/public/svg/file_icon.svg";
 import PeopleIcon from "@/public/svg/people_icon.svg";
 
