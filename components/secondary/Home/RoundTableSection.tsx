@@ -67,7 +67,7 @@ const RoundTableSection = () => {
           <div className="bg-white rounded-lg p-6 mb-6">
             <div className="flex justify-between items-start mb-4">
               <h4 className="text-xl font-semibold font-playfair-display">
-                Unlocking Capital: Reforming Policy Barriers to Women's Access to Finance
+                Unlocking Capital: Reforming Policy Barriers to Women&apos;s Access to Finance
               </h4>
               <div className="bg-affc-pink/10 text-affc-pink text-xs px-2 py-1 rounded">
                 Upcoming

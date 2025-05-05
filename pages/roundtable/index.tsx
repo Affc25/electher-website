@@ -2,10 +2,9 @@ import React from "react"
 import FileIcon from "@/public/svg/file_icon.svg";
 import PeopleIcon from "@/public/svg/people_icon.svg";
 import { RoundTableEvents } from "@/components/secondary/Events";
+import Image from "next/image";
 
 const Events = () => {
-
-
   return (
     <div className="bg-affc-offwhite md:px-28 px-6">
       <section className=" py-24">
@@ -61,11 +60,12 @@ const Events = () => {
               </div>
             </div>
           </div>
-          <div className="flex justify-center">
-            <img 
+          <div className="flex justify-center relative max-h-80">
+            <Image 
+              fill
               src="/images/header_img.png" 
               alt="AFFC Roundtable Discussion" 
-              className="rounded-lg shadow-lg max-h-80 object-cover" 
+              className="rounded-lg shadow-lg object-cover" 
             />
           </div>
         </div>

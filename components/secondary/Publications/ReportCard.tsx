@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/";
 import FileIcon from "@/public/svg/file_icon.svg";
+import Image from "next/image";
 type ReportCardProps = {
   type: string;
   date: string;
@@ -32,9 +33,10 @@ const ReportCard: React.FC<ReportCardProps> = ({
 
       <div className="mb-3">
         <div className="relative w-full h-40 overflow-hidden rounded-lg mb-3">
-          <img
-            src={imageSrc}
+          <Image
+            fill
             alt={title}
+            src={imageSrc}
             className="object-cover w-full h-full"
           />
         </div>

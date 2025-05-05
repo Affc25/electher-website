@@ -1,3 +1,4 @@
+import Image from 'next/image';
 import React from 'react'
 
 const founderUpdates = [
@@ -139,7 +140,9 @@ export const FounderCard = ({
 }: FounderCardProps) => (
   <div className="bg-white p-4 rounded-lg shadow-sm font-inter">
     <div className="flex items-center gap-3 mb-3">
-      <img src={image} alt={name} className="w-12 h-12 rounded-full object-cover" />
+      <div className="size-12 relative">
+        <Image fill src={image} alt={name} className="rounded-full object-cover" />
+      </div>
       <div>
         <h5 className="font-medium text-affc-gray font-playfair-display">{name}</h5>
         <p className="text-xs text-affc-gray/70">{company} | {country}</p>

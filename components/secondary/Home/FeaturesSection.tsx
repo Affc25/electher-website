@@ -16,7 +16,7 @@ const FeaturesSection = () => {
       <div className="max-w-3xl flex flex-col items-center mb-12">
         <h3 className="uppercase font-inter font-bold text-affc-pink text-sm mb-4">Featured In</h3>
         <h4 className="text-3xl md:text-4xl font-semibold mb-6">Media Recognition</h4>
-        <p className="text-lg font-inter text-center text-[#1b1c23cc]">AFFC"s work has been recognized by leading media outlets across Africa and globally.</p>
+        <p className="text-lg font-inter text-center text-[#1b1c23cc]">AFFC&apos;s work has been recognized by leading media outlets across Africa and globally.</p>
       </div>
       <FeaturedInSection/>
     </section>
