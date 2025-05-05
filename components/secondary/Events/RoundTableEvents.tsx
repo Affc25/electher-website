@@ -86,7 +86,6 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
           isActive: tab.unique_id === activeState,
         }))}
         onTabClick={updateTab}
-        
       />
       {
         filteredData.map((item, index)=> (<RoundtableCard key={index} {...item}/>))

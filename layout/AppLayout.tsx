@@ -79,7 +79,7 @@ const AppLayout:FC<PropsType>  = ({
                   icon: "/svg/resource_library_icon.svg",
                   description: "Templates, guides and business tools"
                 },{
-                  href: "#data_center",
+                  href: "data-center",
                   title: "Data Center",
                   icon: "/svg/data_center_icon.svg",
                   description: "Market research and analysis"
