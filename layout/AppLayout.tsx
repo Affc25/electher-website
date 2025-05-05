@@ -67,7 +67,7 @@ const AppLayout:FC<PropsType>  = ({
 
         <nav>
           <ul className={`flex flex-col lg:flex-row mt-4 lg:mt-0 lg:space-x-4 space-y-6 lg:space-y-0 lg:items-center font-inter  ${isMobileMenuOpen ? "block" : "hidden lg:flex"}`}>
-            <LinkItem href="#publications" text="Publications"/>
+            <LinkItem href="publications" text="Publications"/>
             <LinkItem href="#affc_café" text="AFFC Café"/>
             <LinkItem 
               href="#resources" 
