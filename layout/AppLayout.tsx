@@ -87,7 +87,7 @@ const AppLayout:FC<PropsType>  = ({
               ]}
             />
             <LinkItem 
-              href="#female_founder_monitor" 
+              href="founder-monitor" 
               text={
                 <span>
                   Female Founder Monitor
