@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import RoundtableCard, { RoundtableCardProps } from './RoundtableCard'
-import TabsList from './RoundTableTablist'
+import TabsList from '../General/Tablist'
 import { useRouter } from 'next/router';
 
 const tabs = [

@@ -102,7 +102,7 @@ const AppLayout:FC<PropsType>  = ({
       <div>
         {children}
       </div>
-      {router.pathname !== "/" && <Footer/>}
+      <Footer/>
     </main>
   )
 }

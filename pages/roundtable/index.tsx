@@ -1,7 +1,7 @@
-import { RoundTableEvents } from "@/components/secondary/Events";
 import React from "react"
 import FileIcon from "@/public/svg/file_icon.svg";
 import PeopleIcon from "@/public/svg/people_icon.svg";
+import { RoundTableEvents } from "@/components/secondary/Events";
 
 const Events = () => {
 

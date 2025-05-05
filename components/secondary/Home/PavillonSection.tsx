@@ -26,7 +26,7 @@ const eventData:EventItemPropsType[] = [
 
 const PavillonSection = () => {
   return (
-    <section className="p-20 bg-affc-offwhite/40">
+    <section className="p-20 bg-white">
       <div className="grid md:grid-cols-2 gap-12 items-center">
         <PavilionFeatures/>
         <PavillonEvent/>
