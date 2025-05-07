@@ -12,7 +12,7 @@ const founders= [
     imageSrc: "/images/founders/amina-ibrahim.jpg",
     tags: ["CleanTech"],
     fundingStage: "Series A",
-    fundingAmount: "$2,500,000",
+    fundingAmount: 2.5,
     profileLink: "/founders/amina-ibrahim",
   },
   {
@@ -25,7 +25,7 @@ const founders= [
     imageSrc: "/images/founders/fatima-diallo.jpg",
     tags: ["HealthTech"],
     fundingStage: "Seed",
-    fundingAmount: "$1,200,000",
+    fundingAmount: 1.2,
     profileLink: "/founders/fatima-diallo",
   },
   {
@@ -38,7 +38,7 @@ const founders= [
     imageSrc: "/images/founders/nala-mensah.jpg",
     tags: ["FinTech"],
     fundingStage: "Series A",
-    fundingAmount: "$4,000,000",
+    fundingAmount: 4,
     profileLink: "/founders/nala-mensah",
   },
   {
@@ -51,7 +51,7 @@ const founders= [
     imageSrc: "/images/founders/mariam-ahmed.jpg",
     tags: ["AgriTech"],
     fundingStage: "Seed",
-    fundingAmount: "$1,800,000",
+    fundingAmount: 1.8,
     profileLink: "/founders/mariam-ahmed",
   },
   {
@@ -64,7 +64,7 @@ const founders= [
     imageSrc: "/images/founders/thandi-moyo.jpg",
     tags: ["E-commerce"],
     fundingStage: "Series B",
-    fundingAmount: "$5,200,000",
+    fundingAmount: 5.2,
     profileLink: "/founders/thandi-moyo",
   },
 ];

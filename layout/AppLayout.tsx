@@ -94,7 +94,7 @@ const AppLayout:FC<PropsType>  = ({
                 </span>
               }
             />
-            <LinkItem href="#about" text="About"/>
+            <LinkItem href="/about" text="About"/>
             <Button href="#newsletter" className="font-semibold mb-8 lg:mb-0">Newsletter</Button>
           </ul>
         </nav>
