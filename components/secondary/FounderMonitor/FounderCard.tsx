@@ -1,5 +1,6 @@
 import { FC } from "react";
 import MapIcon from "@/public/svg/location_icon.svg"
+import Image from "next/image";
 type FounderCardProps = {
   name: string;
   company: string;
@@ -26,8 +27,8 @@ const FounderCard: FC<FounderCardProps> = ({
   return (
     <div className="rounded-lg border bg-card font-inter bg-white text-card-foreground border-none shadow-md overflow-hidden">
       <div className="flex items-center p-6 border-b border-gray-100">
-        <div className="w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
-          <img src={imageSrc} alt={name} className="w-full h-full object-cover" />
+        <div className="relative w-16 h-16 rounded-full overflow-hidden mr-4 flex-shrink-0">
+          <Image fill src={imageSrc} alt={name} className="w-full h-full object-cover" />
         </div>
         <div>
           <h3 className="font-semibold text-lg font-playfair-display">{name}</h3>

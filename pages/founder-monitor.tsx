@@ -71,11 +71,14 @@ const founders= [
 
 
 const FounderMonitor = () => {
-  const [region, setRegion] = useState("");
-  const [industry, setIndustry] = useState("");
+  const [, setRegion] = useState("");
+  // const [region, setRegion] = useState("");
+  // const [industry, setIndustry] = useState("");
+  const [, setIndustry] = useState("");
   const [searchText, setSearchText] = useState("");
-  const [yearFounded, setYearFounded] = useState("");
-  const [fundingStage, setFundingStage] = useState("");
+  // const [yearFounded, setYearFounded] = useState("");
+  const [, setYearFounded] = useState("");
+  // const [fundingStage, setFundingStage] = useState("");
   const [fundingAmount, setFundingAmount] = useState([0]);
   return (
     <div className="pt-6 md:px-28 px-6 bg-affc-offwhite pb-10">

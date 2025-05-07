@@ -1,5 +1,4 @@
 import { PartnersGrid, ProfileCard } from '@/components/secondary/About';
-import { profile } from 'console';
 import React from 'react'
 const teamMembers = [
   {
@@ -54,7 +53,7 @@ const About = () => {
         
         </h1>
         <div className="h-[2px] w-28 bg-[rgb(214_135_177)] my-8"/>
-        <p className="text-lg font-inter text-center text-[#1b1c23cc]">The Africa Female Founders Collective (AFFC) was founded in 2020 with a mission to address the significant gender funding gap in Africa's entrepreneurial ecosystem. We work to empower female founders by providing them with the resources, networks, and opportunities they need to build scalable and investable ventures.</p>
+        <p className="text-lg font-inter text-center text-[#1b1c23cc]">The Africa Female Founders Collective (AFFC) was founded in 2020 with a mission to address the significant gender funding gap in Africa&apos;s entrepreneurial ecosystem. We work to empower female founders by providing them with the resources, networks, and opportunities they need to build scalable and investable ventures.</p>
       </section>
       <section>
         <div className="grid md:grid-cols-2 gap-12 mb-20 font-inter">

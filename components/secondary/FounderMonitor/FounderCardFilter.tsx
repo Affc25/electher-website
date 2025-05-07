@@ -17,13 +17,13 @@ type PropsType = {
 }
 const FounderCardFilter:FC<PropsType> = ({
   regions,
-  searchText,
+  // searchText,
   industries,
   yearFounded,
   fundingAmount,
-  setRegion,
-  setIndustry,
-  setSearchText,
+  // setRegion,
+  // setIndustry,
+  // setSearchText,
   setYearFounded,
   setFundingAmount
 }) => {
