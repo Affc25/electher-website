@@ -8,16 +8,20 @@ interface Tab {
 
 interface TabsListProps {
   tabs: Tab[];
+  cols?: 2 | 3;
   onTabClick: (value: string) => void;
 }
 
-export const TabsList: FC<TabsListProps> = ({ tabs, onTabClick }) => {
+export const Tablist: FC<TabsListProps> = ({ 
+  tabs, 
+  cols = 3,
+  onTabClick 
+}) => {
   return (
-
     <div
       role="tablist"
       aria-orientation="horizontal"
-      className="h-10 items-center bg-[#f3f5f7] justify-center rounded-md bg-muted p-1 text-muted-foreground grid grid-cols-3 mb-8"
+      className={`h-10 items-center w-full bg-[#f3f5f7] justify-center rounded-md bg-muted p-1 text-muted-foreground grid ${cols === 2 ? "grid-cols-2" : "grid-cols-3"} mb-8`}
       tabIndex={0}
       data-orientation="horizontal"
       style={{ outline: "none" }}
@@ -48,4 +52,4 @@ export const TabsList: FC<TabsListProps> = ({ tabs, onTabClick }) => {
   );
 };
 
-export default TabsList
+export default Tablist

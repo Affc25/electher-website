@@ -67,19 +67,19 @@ const AppLayout:FC<PropsType>  = ({
 
         <nav>
           <ul className={`flex flex-col lg:flex-row mt-4 lg:mt-0 lg:space-x-4 space-y-6 lg:space-y-0 lg:items-center font-inter  ${isMobileMenuOpen ? "block" : "hidden lg:flex"}`}>
-            <LinkItem href="#publications" text="Publications"/>
-            <LinkItem href="#affc_café" text="AFFC Café"/>
+            <LinkItem href="publications" text="Publications"/>
+            <LinkItem href="podcast" text="AFFC Café"/>
             <LinkItem 
               href="#resources" 
               text="Resources"
               subLinks={[
                 {
-                  href: "#resource_library",
+                  href: "resource-library",
                   title: "Resource Library",
                   icon: "/svg/resource_library_icon.svg",
                   description: "Templates, guides and business tools"
                 },{
-                  href: "#data_center",
+                  href: "data-center",
                   title: "Data Center",
                   icon: "/svg/data_center_icon.svg",
                   description: "Market research and analysis"
@@ -87,14 +87,14 @@ const AppLayout:FC<PropsType>  = ({
               ]}
             />
             <LinkItem 
-              href="#female_founder_monitor" 
+              href="founder-monitor" 
               text={
                 <span>
                   Female Founder Monitor
                 </span>
               }
             />
-            <LinkItem href="#about" text="About"/>
+            <LinkItem href="/about" text="About"/>
             <Button href="#newsletter" className="font-semibold mb-8 lg:mb-0">Newsletter</Button>
           </ul>
         </nav>
@@ -102,7 +102,7 @@ const AppLayout:FC<PropsType>  = ({
       <div>
         {children}
       </div>
-      {router.pathname !== "/" && <Footer/>}
+      <Footer/>
     </main>
   )
 }
@@ -125,6 +125,12 @@ const LinkItem:FC<LinkItemPropsType> = ({
   text,
   subLinks
 }) => {
+  const [sublinksOpen, setSublinksOpen] = useState(false);
+
+  const handleSublinksChange = () => {
+    setSublinksOpen(prev => !prev);
+  }  
+
   if (!subLinks) return(
     <li>
       <Link href={href} className="font-medium cursor-pointer lg:py-2 lg:px-4 lg:text-sm">
@@ -134,7 +140,7 @@ const LinkItem:FC<LinkItemPropsType> = ({
   )
   return (
     <li className="relative group">
-      <span className="font-medium flex cursor-pointer space-x-1 lg:text-sm items-center rounded-sm hover:text-brand hover:bg-green-200 lg:py-2 lg:px-4">
+      <button onClick={handleSublinksChange} className="font-medium flex cursor-pointer space-x-1 lg:text-sm items-center rounded-sm hover:text-brand hover:bg-green-200 lg:py-2 lg:px-4">
         <span>{text}</span>
         <div className="relative size-3 group-hover:rotate-180 transition-all delay-200">
           <Image
@@ -143,9 +149,9 @@ const LinkItem:FC<LinkItemPropsType> = ({
             src="/svg/dropdown_icon.svg"
           />
         </div>
-      </span>
+      </button>
       <div 
-        className="lg:absolute flex flex-col lg:flex-row overflow-hidden max-h-0 opacity-0 scale-95 group-hover:opacity-100 group-hover:max-h-[500px] group-hover:scale-100 transition-[scale_height] duration-300 ease-in-out space-x-2 p-0 group-hover:p-4 rounded-md lg:bg-white top-9 lg:shadow-lg w-full lg:w-fit">
+        className={`lg:absolute flex flex-col lg:flex-row overflow-hidden max-h-0 opacity-0 scale-95 ${sublinksOpen ? "opacity-100 max-h-[500px] scale-100 p-4" : ""} lg:group-hover:opacity-100 lg:group-hover:max-h-[500px] lg:group-hover:scale-100 transition-[scale_height] duration-300 ease-in-out space-x-2 p-0 lg:group-hover:p-4 rounded-md lg:bg-white top-9 lg:shadow-lg w-full lg:w-fit`}>
         {
           subLinks.map(item=>{
             return(

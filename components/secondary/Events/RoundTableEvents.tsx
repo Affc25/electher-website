@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import RoundtableCard, { RoundtableCardProps } from './RoundtableCard'
-import TabsList from './RoundTableTablist'
+import TabsList from '../General/Tablist'
 import { useRouter } from 'next/router';
 
 const tabs = [
@@ -86,7 +86,6 @@ const RoundTableEvents:FC<PropsType> = ({data}) => {
           isActive: tab.unique_id === activeState,
         }))}
         onTabClick={updateTab}
-        
       />
       {
         filteredData.map((item, index)=> (<RoundtableCard key={index} {...item}/>))
