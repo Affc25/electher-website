@@ -15,6 +15,7 @@ export default function App({ Component, pageProps }: AppProps) {
           name="description"
           content="AFFC is closing the gender funding gap in Africa by supporting female founders with funding, networks, and resources to build scalable ventures."
         />
+         <link rel="icon" type="image/x-icon" href="favicon.png"></link>
         <meta
           name="keywords"
           content="AFFC, Africa Female Founder Collective, female entrepreneurs Africa, women in tech Africa, gender funding gap, African startups, women founders"
